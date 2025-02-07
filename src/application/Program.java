@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 import db.DB;
 import db.DbException;
@@ -46,6 +47,17 @@ public class Program {
 		seller.setName("Rogerio");
 		sellerDao.update(seller);
 		System.out.println("Update conccluido");
+		
+		System.out.println("\n=== TEST 6: seller delete =====");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Entre com o id para deletar");
+		int id = sc.nextInt();
+		sellerDao.deleteById(id);
+		System.out.println("Delete concluído");
+		
+		sc.close();
+		
+		
 		
 	}
 }
